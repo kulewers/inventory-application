@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+    h1= title 
+    ul
+        each tea in tea_list 
+            li 
+                a(href=tea.url) #{tea.name}
+                |  (#{tea.numberInStock} in Stock)
+
+        else
+            li There is no tea.

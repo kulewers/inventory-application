@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+    h1 #{title}: #{tea.name}
+    p= tea.description 
+
+    p Do you really want to delete this Tea?
+
+    form(method='POST' action='')
+        div.form-group
+            input#teaid.form-control(type='hidden', name='teaid', required='true', value=tea._id)
+
+        button.btn.btn-primary(type='submit') Delete 

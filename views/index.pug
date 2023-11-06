@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #[em Tea Inventory]!
+
+  h1 Dynamic content
+
+  p The inventory has the following record counts:
+
+  ul
+    li #[strong Tea:] !{tea_count}
+    li #[strong Tea in Stock:] !{tea_in_stock_count}
+    li #[strong Tea out of Stock:] !{tea_out_of_stock_count}
+    li #[strong Categories:] !{category_count}

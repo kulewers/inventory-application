@@ -1,0 +1,19 @@
+extends layout 
+
+block content 
+    h1 Tea: #{tea.name}
+
+    p #[strong Description:] #{tea.description}
+    p #[strong Price:] $#{tea.price}
+    p #[strong Number in Stock:] #{tea.numberInStock}
+    p #[strong Category:] 
+        each val, index in tea.category
+            a(href=val.url) #{val.name}
+            if index < tea.category.length - 1
+                |,
+
+    hr
+    p
+        a(href=`/tea/delete/${tea.name}`) Delete Tea
+    p
+        a(href=`/tea/update/${tea.name}`) Update Tea
