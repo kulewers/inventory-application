@@ -1,3 +1,4 @@
+require("dotenv").config();
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
@@ -13,9 +14,7 @@ const app = express();
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const mongoDB =
-    "mongodb+srv://kulewers:qWZyfi5uVRfpzxL4@inventory-application.aqs1mq2.mongodb.net/inventory-application?retryWrites=true&w=majority";
-
+const mongoDB = process.env.MONGODB;
 main().catch((err) => console.log(err));
 async function main() {
     await mongoose.connect(mongoDB);
